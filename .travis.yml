@@ -51,14 +51,7 @@ script:
   - make run-tests-auto
   - make distclean
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then build-wrapper-linux-x86-64 --out-dir bw-output make target tests;fi;
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sonar-scanner \
-        -Dsonar.projectKey=unice-etu-gom_ITII-S8-POO-hello_wxWidget \
-        -Dsonar.organization=unice-etu-gom-github \
-        -Dsonar.sources=. \
-        -Dsonar.cfamily.build-wrapper-output=bw-output \
-        -Dsonar.host.url=https://sonarcloud.io \
-        -Dsonar.login=de88b62f2ab50e16e188df019ff61412d48b04c9; \
-    fi;
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sonar-scanner -X -Dsonar.organization=unice-etu-gom-github -Dsonar.cfamily.build-wrapper-output=bw-output -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=de88b62f2ab50e16e188df019ff61412d48b04c9; fi;
 
 
 
