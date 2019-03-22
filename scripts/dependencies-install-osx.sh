@@ -1,22 +1,9 @@
 #!/bin/bash
 
-# To stop at first error
 set -e
-
-# To trace executed commands
 set -x
 
+brew update
+brew install wxmac
 
-
-#
-#   Installation of needed dependencies
-#
-echo "No dependencies to install."
-
-#brew update
-
-#brew install <package>
-
-
-
-exit $?
+exit 0
